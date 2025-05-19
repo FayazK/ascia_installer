@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-REPO=${REPO:-"https://github.com/your-org/frontend-build.git"}
+REPO=${REPO:-"https://github.com/FayazK/ascia_ui.git"}
 TARGET=/config/custom_frontend
 
 echo "[*] Downloading build..."
