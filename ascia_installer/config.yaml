@@ -1,10 +1,28 @@
 name: Ascia Frontend Installer
-slug: ascia_installer        # ← identical to the folder name
-version: "0.0.1"
-description: Installs Ascia custom Lovelace UI
+slug: ascia_installer
+version: "0.1.0"
+description: >-
+  Installs Ascia custom Lovelace UI, a modern and customizable 
+  interface for Home Assistant with responsive design and enhanced dashboards.
+url: "https://github.com/FayazK/ascia_installer"
 arch:
-  - amd64                     # add others if you need them
+  - amd64
+  - armv7
+  - aarch64
+  - i386
 startup: once
 boot: auto
+map:
+  - config:rw
+init: false
+options:
+  repo: "https://github.com/FayazK/ascia_ui.git"
+  branch: "main"
+  make_backup: true
+  restart_ha: true
 schema:
-  repo: str?
+  repo: str
+  branch: str
+  make_backup: bool
+  restart_ha: bool
+icon: "mdi:brush-variant"
