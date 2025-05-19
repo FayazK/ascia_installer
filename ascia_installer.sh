@@ -12,8 +12,8 @@ echo "Version: 1.0.0"
 echo "=================================================="
 
 # Set default variables
-REPO="https://github.com/FayazK/ascia_ui.git"
-BRANCH="main"
+REPO="https://github.com/msuleman526/frontend.git"
+BRANCH="custom-build"
 MAKE_BACKUP="true"
 RESTART_HA="true"
 HA_CONFIG_DIR="/config"  # Default Home Assistant config directory
