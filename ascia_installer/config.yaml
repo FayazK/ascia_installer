@@ -1,0 +1,10 @@
+name: Ascia Frontend Installer
+slug: ascia_installer        # ← identical to the folder name
+version: "0.0.1"
+description: Installs Ascia custom Lovelace UI
+arch:
+  - amd64                     # add others if you need them
+startup: once
+boot: auto
+schema:
+  repo: str?

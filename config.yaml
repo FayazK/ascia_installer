@@ -1,7 +1,0 @@
-name: Custom Frontend Installer
-startup: once          # supervisor will stop container after run.sh exits
-boot: auto
-init: false
-privileged: [ "SYS_ADMIN" ]
-schema:
-  repo: str?
