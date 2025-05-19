@@ -69,6 +69,11 @@ To uninstall Ascia UI:
 
 ## Changelog
 
+- 0.1.2
+  - Added network resilience for environments with connectivity issues
+  - Made installer work without jq dependency for maximum compatibility
+  - Added fallback package mirrors for better Alpine repository access
+
 - 0.1.1
   - Fixed compatibility issues with Docker base images
   - Removed version pinning to ensure wider compatibility

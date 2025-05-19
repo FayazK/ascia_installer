@@ -9,11 +9,21 @@ set -e
 # Access the configuration options
 CONFIG_PATH=/data/options.json
 
-# Parse config
-REPO=$(jq --raw-output '.repo // "https://github.com/FayazK/ascia_ui.git"' $CONFIG_PATH)
-BRANCH=$(jq --raw-output '.branch // "main"' $CONFIG_PATH)
-MAKE_BACKUP=$(jq --raw-output '.make_backup // true' $CONFIG_PATH)
-RESTART_HA=$(jq --raw-output '.restart_ha // true' $CONFIG_PATH)
+# Check if jq is installed
+if command -v jq >/dev/null 2>&1; then
+    # Parse config with jq
+    REPO=$(jq --raw-output '.repo // "https://github.com/FayazK/ascia_ui.git"' $CONFIG_PATH 2>/dev/null || echo "https://github.com/FayazK/ascia_ui.git")
+    BRANCH=$(jq --raw-output '.branch // "main"' $CONFIG_PATH 2>/dev/null || echo "main")
+    MAKE_BACKUP=$(jq --raw-output '.make_backup // true' $CONFIG_PATH 2>/dev/null || echo "true")
+    RESTART_HA=$(jq --raw-output '.restart_ha // true' $CONFIG_PATH 2>/dev/null || echo "true")
+else
+    # Fallback values if jq is not available
+    echo "[!] Warning: jq not found, using default configuration"
+    REPO="https://github.com/FayazK/ascia_ui.git"
+    BRANCH="main"
+    MAKE_BACKUP="true"
+    RESTART_HA="true"
+fi
 
 # Target directories
 TARGET=/config/custom_frontend
@@ -24,7 +34,7 @@ TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")
 # Print banner
 echo "=================================================="
 echo "Ascia UI Installer for Home Assistant"
-echo "Version: 0.1.1"
+echo "Version: 0.1.2"
 echo "=================================================="
 echo "Repository: $REPO"
 echo "Branch: $BRANCH"

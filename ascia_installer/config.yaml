@@ -1,6 +1,6 @@
 name: Ascia Frontend Installer
 slug: ascia_installer
-version: "0.1.1"
+version: "0.1.2"
 description: >-
   Installs Ascia custom Lovelace UI, a modern and customizable 
   interface for Home Assistant with responsive design and enhanced dashboards.
