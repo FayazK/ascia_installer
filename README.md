@@ -69,6 +69,11 @@ To uninstall Ascia UI:
 
 ## Changelog
 
+- 0.1.1
+  - Fixed compatibility issues with Docker base images
+  - Removed version pinning to ensure wider compatibility
+  - Simplified container configuration for better reliability
+
 - 0.1.0
   - Enhanced security with repository validation and content scanning
   - Added multiple architecture support

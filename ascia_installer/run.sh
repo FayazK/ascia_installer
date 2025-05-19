@@ -24,7 +24,7 @@ TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")
 # Print banner
 echo "=================================================="
 echo "Ascia UI Installer for Home Assistant"
-echo "Version: 0.1.0"
+echo "Version: 0.1.1"
 echo "=================================================="
 echo "Repository: $REPO"
 echo "Branch: $BRANCH"
